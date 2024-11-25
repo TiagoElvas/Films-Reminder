@@ -7,6 +7,7 @@ public class Nemo extends EveryFilm{
     }
 
     public void catchPhrase() {
+        System.out.println("You choose " + super.getName() + " for this afternoon! Enjoy it!");
         System.out.println("Don't go to far!");
     }
 }

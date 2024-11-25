@@ -8,6 +8,7 @@ public class Cars extends EveryFilm {
 
     @Override
     public void catchPhrase() {
+        System.out.println("You choose " + super.getName() + " for this afternoon! Enjoy it!");
         System.out.println("Ka-chow!!");
     }
 }

@@ -13,9 +13,13 @@ public class EveryFilm implements Film{
         this.director = director;
         this.yearReleased = yearReleased;
         this.type = type;
-        System.out.println("Your choose " + name + " for this afternoon! Enjoy it!");
+
     }
 
     @Override
     public void catchPhrase(){};
+
+    public String getName() {
+        return name;
+    }
 }
