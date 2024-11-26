@@ -1,6 +1,5 @@
 package org.example.controllers;
 
-import org.example.films.Film;
 import org.example.services.VideoClubService;
 import org.example.views.VideoClubView;
 
@@ -12,8 +11,8 @@ public class VideoClubController {
 
     public void start(){
         videoClubView.show();
-        Film filmChosen = videoClubService.readListFilms(choice);
-        filmChosen.catchPhrase();
+        videoClubService.readListFilms(choice);
+
     }
 
     public void setVideoClubView(VideoClubView videoClubView) {
