@@ -25,10 +25,5 @@
 
     <bean id="videoClubService" class="org.example.services.VideoClubService"/>
 
-    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="emFactory"/>
-    </bean>
-    <!-- Activate annotation-driven transactions -->
-    <tx:annotation-driven transaction-manager="transactionManager"/>
 
 </beans>
