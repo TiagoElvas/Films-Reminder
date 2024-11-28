@@ -1,11 +1,11 @@
-package org.example.connectionManager;
+package org.example.JDBCconnectionManager;
 
 import java.sql.SQLException;
 
-public class TransactionManager {
-    private SessionManager cm;
+public class JDBCTransactionManager {
+    private JDBCSessionManager cm;
 
-    public void setConnectionManager(SessionManager sessionManager){
+    public void setConnectionManager(JDBCSessionManager sessionManager){
         this.cm = sessionManager;
     }
 

@@ -3,26 +3,27 @@ package org.example.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="movie")
-public class EveryFilm{
+@Table(name="film")
+public class Film {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
     private String director;
-    private Integer yearReleased;
+    private int  year;
+
     //private String type;
     //private String catchPhrase;
 
 
-    public EveryFilm(String title, String director, int yearReleased) {
+    public Film(String title, String director, int year) {
         this.title = title;
         this.director = director;
-        this.yearReleased = yearReleased;
+        this.year = year;
     }
 
-    public EveryFilm() {
+    public Film() {
     }
 
 
@@ -48,12 +49,18 @@ public class EveryFilm{
         this.director = director;
     }
 
-    public int getYearReleased() {
-        return yearReleased;
+    public int getYear() {
+        return year;
     }
 
-    public void setYearReleased(int yearReleased) {
-        this.yearReleased = yearReleased;
+    public void setYearReleased(int year) {
+        this.year = year;
     }
 
+    @Override
+    public String toString(){
+        return "Title: " + title + "; " +
+                "Director: " + director + "; " +
+                "releasedDate: " + year;
+    }
 }

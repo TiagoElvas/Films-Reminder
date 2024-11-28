@@ -1,10 +1,10 @@
-package org.example.connectionManager;
+package org.example.JDBCconnectionManager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class SessionManager {
+public class JDBCSessionManager {
         private Connection connection = null;
 
         public Connection startSession() {

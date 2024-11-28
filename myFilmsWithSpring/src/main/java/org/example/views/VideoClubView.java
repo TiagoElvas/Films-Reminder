@@ -8,7 +8,7 @@ import org.example.controllers.VideoClubController;
 public class VideoClubView {
 
 
-    Prompt prompt;
+    private Prompt prompt;
     private VideoClubController videoClubController;
 
     private Bootstrap bootstrap;

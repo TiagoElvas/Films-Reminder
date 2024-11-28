@@ -8,7 +8,6 @@ import javax.persistence.PersistenceContext;
 
 public class Main {
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("test");
 
         Bootstrap bootstrap = new Bootstrap();
         VideoClubController videoClubController = bootstrap.wireObjects();
