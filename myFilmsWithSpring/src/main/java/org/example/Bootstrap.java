@@ -6,6 +6,8 @@ import org.example.JPAConnectionManager.JPATransactionManager;
 import org.example.controllers.VideoClubController;
 import org.example.dao.Dao;
 import org.example.services.VideoClubService;
+import org.example.views.AddFilmView;
+import org.example.views.DeleteView;
 import org.example.views.VideoClubView;
 
 import javax.persistence.EntityManagerFactory;
@@ -23,8 +25,14 @@ public class Bootstrap {
         JPATransactionManager jpaTransactionManager = new JPATransactionManager();
 
         VideoClubController videoClubController = new VideoClubController();
+        AddFilmView addFilmView = new AddFilmView();
+        DeleteView deleteView = new DeleteView();
+        deleteView.setPrompt(prompt);
+        deleteView.setVideoClubController(videoClubController);
 
         VideoClubView videoClubView = new VideoClubView();
+        addFilmView.setPrompt(prompt);
+        addFilmView.setVideoClubController(videoClubController);
 
         VideoClubService videoClubService = new VideoClubService();
         videoClubService.setDao(dao);
@@ -33,6 +41,8 @@ public class Bootstrap {
 
         videoClubController.setVideoClubService(videoClubService);
         videoClubController.setVideoClubView(videoClubView);
+        videoClubController.setAddFilmView(addFilmView);
+        videoClubController.setDeleteView(deleteView);
 
         videoClubView.setPrompt(prompt);
 

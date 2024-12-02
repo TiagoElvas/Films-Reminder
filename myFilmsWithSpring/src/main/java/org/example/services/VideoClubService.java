@@ -32,6 +32,16 @@ public class VideoClubService {
             tm.rollback();
         }
     }
+
+    public void delete(Integer id){
+        try{
+            tm.beginWrite();
+            dao.delete(id);
+            tm.commit();
+        } catch(TransactionException e){
+            tm.rollback();
+        }
+    }
     public void setTm(JPATransactionManager tm) {
         this.tm = tm;
     }

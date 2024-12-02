@@ -1,4 +1,5 @@
 package org.example.dao;
+
 import org.example.Bootstrap;
 import org.example.model.Film;
 
@@ -11,6 +12,18 @@ import java.util.List;
 public class Dao {
 
     private EntityManagerFactory emf;
+
+    public Film findById(Integer id) {
+        EntityManager em = emf.createEntityManager();
+
+        try {
+            return em.find(Film.class, id);
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
 
     public List<Film> read() {
         EntityManager em = emf.createEntityManager();
@@ -26,21 +39,42 @@ public class Dao {
         }
     }
 
-    public Film create(Film film){
+    public Film create(Film film) {
 
         EntityManager em = emf.createEntityManager();
 
         try {
             em.getTransaction().begin();
-            Film object = em.merge(film);
+            Film newFilm = em.merge(film);
             em.getTransaction().commit();
-            return object;
+            return newFilm;
 
         } catch (RollbackException ex) {
-            // something went wrong, make sure db is consistent
             em.getTransaction().rollback();
             return null;
 
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+
+    public void delete(Integer id) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            em.getTransaction().begin();
+            Film film = em.find(Film.class, id);
+
+            if (em != null) {
+                em.remove(film);
+            } else {
+                System.out.println("User not found.");
+            }
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            e.printStackTrace();
         } finally {
             if (em != null) {
                 em.close();

@@ -11,9 +11,7 @@ public class VideoClubView {
     private Prompt prompt;
     private VideoClubController videoClubController;
 
-    private Bootstrap bootstrap;
-
-    String[] options = {"List films", "Add films"};
+    String[] options = {"List films", "Add films", "Delete film"};
 
     public void show(){
         MenuInputScanner menuInputScanner = new MenuInputScanner(options);
@@ -21,7 +19,6 @@ public class VideoClubView {
         int choice = prompt.getUserInput(menuInputScanner);
         System.out.println(choice);
         videoClubController.setChoice(choice);
-
     }
 
     public void setPrompt(Prompt prompt) {
@@ -30,10 +27,6 @@ public class VideoClubView {
 
     public void setVideoClubController(VideoClubController videoClubController) {
         this.videoClubController = videoClubController;
-    }
-
-    public void setBootstrap(Bootstrap bootstrap) {
-        this.bootstrap = bootstrap;
     }
 
 }

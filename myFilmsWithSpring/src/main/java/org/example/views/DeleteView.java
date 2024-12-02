@@ -6,27 +6,18 @@ import org.academiadecodigo.bootcamp.scanners.string.StringInputScanner;
 import org.example.controllers.VideoClubController;
 import org.example.model.Film;
 
-public class AddFilmView {
-
+public class DeleteView {
     private Prompt prompt;
     private VideoClubController videoClubController;
 
-    public void show(){
+    public void show() {
 
 
-        StringInputScanner input = new StringInputScanner();
-        input.setMessage("Add a new film! \n");
-        String title = prompt.getUserInput(input);
-        input.setMessage("director: \n");
-        String director = prompt.getUserInput(input);
-        IntegerInputScanner input1 = new IntegerInputScanner();
-        input.setMessage("date of released: \n");
-        int year = prompt.getUserInput(input1);
+        IntegerInputScanner input = new IntegerInputScanner();
+        input.setMessage("Which film to delete? Write the title: \n");
+        Integer titleDelete = prompt.getUserInput(input);
 
-
-        Film newFilm = new Film(title, director, year);
-        videoClubController.setNewFilm(newFilm);
-
+        videoClubController.setDelete(titleDelete);
     }
 
     public void setPrompt(Prompt prompt) {
