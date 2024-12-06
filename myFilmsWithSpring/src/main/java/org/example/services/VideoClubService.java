@@ -14,6 +14,7 @@ public class VideoClubService {
 
     private Dao dao;
     private JPATransactionManager tm;
+
     public List<Film> readListFilms() {
         try {
             tm.beginRead();
@@ -42,6 +43,7 @@ public class VideoClubService {
             tm.rollback();
         }
     }
+
     public void setTm(JPATransactionManager tm) {
         this.tm = tm;
     }

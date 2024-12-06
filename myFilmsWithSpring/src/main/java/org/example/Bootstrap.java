@@ -21,38 +21,38 @@ public class Bootstrap {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("test");
 
         Dao dao = new Dao();
+        dao.setEntityManagerFactory(emf);
+
         JPASessionManager jpaSessionManager = new JPASessionManager();
+        jpaSessionManager.setEntityManagerFactory(emf);
+
         JPATransactionManager jpaTransactionManager = new JPATransactionManager();
+        jpaTransactionManager.setJPASessionManager(jpaSessionManager);
 
         VideoClubController videoClubController = new VideoClubController();
+
         AddFilmView addFilmView = new AddFilmView();
+        addFilmView.setPrompt(prompt);
+        addFilmView.setVideoClubController(videoClubController);
+
         DeleteView deleteView = new DeleteView();
         deleteView.setPrompt(prompt);
         deleteView.setVideoClubController(videoClubController);
 
         VideoClubView videoClubView = new VideoClubView();
-        addFilmView.setPrompt(prompt);
-        addFilmView.setVideoClubController(videoClubController);
+        videoClubView.setVideoClubController(videoClubController);
+        videoClubView.setPrompt(prompt);
 
         VideoClubService videoClubService = new VideoClubService();
         videoClubService.setDao(dao);
-
-        videoClubView.setVideoClubController(videoClubController);
+        videoClubService.setTm(jpaTransactionManager);
 
         videoClubController.setVideoClubService(videoClubService);
         videoClubController.setVideoClubView(videoClubView);
         videoClubController.setAddFilmView(addFilmView);
         videoClubController.setDeleteView(deleteView);
 
-        videoClubView.setPrompt(prompt);
-
-        dao.setEntityManagerFactory(emf);
-        jpaSessionManager.setEntityManagerFactory(emf);
-        jpaTransactionManager.setJPASessionManager(jpaSessionManager);
-        videoClubService.setTm(jpaTransactionManager);
-
 
         return videoClubController;
     }
-
 }

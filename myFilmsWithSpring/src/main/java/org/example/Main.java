@@ -8,7 +8,6 @@ import javax.persistence.PersistenceContext;
 
 public class Main {
     public static void main(String[] args) {
-
         Bootstrap bootstrap = new Bootstrap();
         VideoClubController videoClubController = bootstrap.wireObjects();
 

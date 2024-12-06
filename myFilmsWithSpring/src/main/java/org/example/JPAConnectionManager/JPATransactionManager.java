@@ -20,14 +20,14 @@ public class JPATransactionManager {
     }
 
     public void commit() {
-        if(sm.getCurrentSession().getTransaction().isActive()){
+        if (sm.getCurrentSession().getTransaction().isActive()) {
             sm.getCurrentSession().getTransaction().commit();
         }
         sm.stopSession();
     }
 
     public void rollback() {
-        if(sm.getCurrentSession().getTransaction().isActive()){
+        if (sm.getCurrentSession().getTransaction().isActive()) {
             sm.getCurrentSession().getTransaction().rollback();
         }
         sm.stopSession();

@@ -13,10 +13,6 @@ public class Film {
     private String director;
     private int  year;
 
-    //private String type;
-    //private String catchPhrase;
-
-
     public Film(String title, String director, int year) {
         this.title = title;
         this.director = director;
@@ -27,12 +23,17 @@ public class Film {
     }
 
 
+
+    //Getters and Setters
+
     public String getTitle() {
         return title;
     }
+
     public void setTitle(String title) {
         this.title = title;
     }
+
     public Integer getId() {
         return id;
     }
@@ -59,7 +60,8 @@ public class Film {
 
     @Override
     public String toString(){
-        return "Title: " + title + "; " +
+        return  id + ") " +
+                "Title: " + title + "; " +
                 "Director: " + director + "; " +
                 "releasedDate: " + year;
     }

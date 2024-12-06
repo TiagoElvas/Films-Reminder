@@ -11,7 +11,7 @@ public class VideoClubView {
     private Prompt prompt;
     private VideoClubController videoClubController;
 
-    String[] options = {"List films", "Add films", "Delete film"};
+    String[] options = {"List films", "Add films", "Delete film", "Exit"};
 
     public void show(){
         MenuInputScanner menuInputScanner = new MenuInputScanner(options);

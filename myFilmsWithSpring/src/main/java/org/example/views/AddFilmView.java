@@ -13,20 +13,20 @@ public class AddFilmView {
 
     public void show(){
 
-
         StringInputScanner input = new StringInputScanner();
         input.setMessage("Add a new film! \n");
         String title = prompt.getUserInput(input);
+
         input.setMessage("director: \n");
         String director = prompt.getUserInput(input);
+
         IntegerInputScanner input1 = new IntegerInputScanner();
-        input.setMessage("date of released: \n");
+        input1.setMessage("date of released: \n");
         int year = prompt.getUserInput(input1);
 
 
         Film newFilm = new Film(title, director, year);
         videoClubController.setNewFilm(newFilm);
-
     }
 
     public void setPrompt(Prompt prompt) {

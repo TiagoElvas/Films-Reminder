@@ -12,9 +12,8 @@ public class DeleteView {
 
     public void show() {
 
-
         IntegerInputScanner input = new IntegerInputScanner();
-        input.setMessage("Which film to delete? Write the title: \n");
+        input.setMessage("Which film to delete? Type the number \n");
         Integer titleDelete = prompt.getUserInput(input);
 
         videoClubController.setDelete(titleDelete);
