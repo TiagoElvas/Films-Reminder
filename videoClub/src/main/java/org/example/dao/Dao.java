@@ -66,10 +66,10 @@ public class Dao {
             em.getTransaction().begin();
             Film film = em.find(Film.class, id);
 
-            if (em != null) {
+            if (em != null && film != null ) {
                 em.remove(film);
             } else {
-                System.out.println("User not found.");
+                System.out.println(" \n Film not found. Please, check again.");
             }
             em.getTransaction().commit();
         } catch (Exception e) {
