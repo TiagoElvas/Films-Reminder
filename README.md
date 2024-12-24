@@ -18,42 +18,37 @@ A simple terminal-based film reminder application that allows you to list, add, 
 </ul>
 
 <h2>Setup Instructions</h2>
-1. Clone the repository
-
+<h4 style="bold">1. Clone the repository</h4>
 
 Copy code
-git clone https://github.com/your-username/film-reminder-app.git
+(url)
 cd film-reminder-app
-2. Configure Database Connection
-Ensure you have a relational database set up. You can configure your database connection in the persistence.xml file located in the src/main/resources/META-INF directory. Update the javax.persistence.jdbc.url, javax.persistence.jdbc.user, and javax.persistence.jdbc.password properties according to your database setup.
 
-Example for H2 Database:
+<h4 style="bold">2. Configure Database Connection</h4>
+Ensure you have a relational database set up. You can configure your database connection in the persistence.xml file located in the src/main/resources/META-INF directory. 
+Update the:
+<br> 1 - javax.persistence.jdbc.url, 
+<br> 2 - javax.persistence.jdbc.user, and
+<br> 3 - javax.persistence.jdbc.password
+<br>
+<br>properties according to your database setup.
 
-xml
-Copy code
-<persistence-unit name="filmPU">
-    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-    <jta-data-source>java:/jdbc/YourDataSource</jta-data-source>
-    <properties>
-        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
-        <property name="hibernate.hbm2ddl.auto" value="update"/>
-        <property name="hibernate.show_sql" value="true"/>
-    </properties>
-</persistence-unit>
-
-3. Build the Project
+<h4 style="bold">3. Build the Project</h4>
 Use Maven to build and install the necessary dependencies.
-
-bash
-Copy code
-mvn clean install
-4. Run the Application
+<br> - mvn clean install
+<h4 style="bold">4. Run the Application</h4>
 To start the terminal application, run the following command:
+<br>
+<br> - mvn exec:java -Dexec.mainClass="com.yourpackage.Main"
+<br>
+<br>This will launch the terminal-based interface where you can interact with the app.
 
-bash
-Copy code
-mvn exec:java -Dexec.mainClass="com.yourpackage.Main"
-This will launch the terminal-based interface where you can interact with the app.
-
-Usage
 Once the application is running, you will be prompted with the following options:
+<br>
+<ol>
+  <li>List Films</li>
+  <li>Add Film</li>
+  <li>Delete Film</li>
+  <li>Exit</li>
+</ol>
+
