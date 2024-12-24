@@ -6,11 +6,9 @@ import org.example.dao.Dao;
 import org.example.model.Film;
 import org.hibernate.TransactionException;
 
-import javax.persistence.EntityManager;
-import javax.persistence.RollbackException;
 import java.util.List;
 
-public class VideoClubService {
+public class filmService {
 
     private Dao dao;
     private JPATransactionManager tm;

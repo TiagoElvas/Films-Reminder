@@ -2,13 +2,11 @@ package org.example.views;
 
 import org.academiadecodigo.bootcamp.Prompt;
 import org.academiadecodigo.bootcamp.scanners.integer.IntegerInputScanner;
-import org.academiadecodigo.bootcamp.scanners.string.StringInputScanner;
-import org.example.controllers.VideoClubController;
-import org.example.model.Film;
+import org.example.controller.filmController;
 
 public class DeleteView {
     private Prompt prompt;
-    private VideoClubController videoClubController;
+    private filmController filmController;
 
     public void show() {
 
@@ -16,14 +14,14 @@ public class DeleteView {
         input.setMessage("Which film to delete? Type the number \n");
         Integer titleDelete = prompt.getUserInput(input);
 
-        videoClubController.setDelete(titleDelete);
+        filmController.setDelete(titleDelete);
     }
 
     public void setPrompt(Prompt prompt) {
         this.prompt = prompt;
     }
 
-    public void setVideoClubController(VideoClubController videoClubController) {
-        this.videoClubController = videoClubController;
+    public void setVideoClubController(filmController filmController) {
+        this.filmController = filmController;
     }
 }

@@ -1,18 +1,17 @@
-package org.example.controllers;
+package org.example.controller;
 
-import com.mysql.cj.x.protobuf.Mysqlx;
 import org.example.model.Film;
-import org.example.services.VideoClubService;
+import org.example.services.filmService;
 import org.example.views.AddFilmView;
 import org.example.views.DeleteView;
-import org.example.views.VideoClubView;
+import org.example.views.MenuView;
 
 import java.util.List;
 
-public class VideoClubController {
+public class filmController {
 
-    private VideoClubView videoClubView;
-    private VideoClubService videoClubService;
+    private MenuView menuView;
+    private filmService filmService;
     private AddFilmView addFilmView;
     private DeleteView deleteView;
     private int choice;
@@ -21,22 +20,22 @@ public class VideoClubController {
 
 
     public void start() {
-        videoClubView.show();
+        menuView.show();
 
         switch (choice) {
             case 1:
-                List<Film> films = videoClubService.readListFilms();
+                List<Film> films = filmService.readListFilms();
                 for (Film list : films) {
                     System.out.println(list.toString());
                 }
                 break;
             case 2:
                 addFilmView.show();
-                videoClubService.addFilm(newFilm);
+                filmService.addFilm(newFilm);
                 break;
             case 3:
                 deleteView.show();
-                videoClubService.delete(filmDeleted);
+                filmService.delete(filmDeleted);
                 break;
             case 4:
                 System.out.println("Come again to CodeFlix!");
@@ -48,16 +47,16 @@ public class VideoClubController {
 
     //getters and setters
 
-    public void setVideoClubView(VideoClubView videoClubView) {
-        this.videoClubView = videoClubView;
+    public void setVideoClubView(MenuView menuView) {
+        this.menuView = menuView;
     }
 
     public void setChoice(int choice) {
         this.choice = choice;
     }
 
-    public void setVideoClubService(VideoClubService videoClubService) {
-        this.videoClubService = videoClubService;
+    public void setVideoClubService(filmService filmService) {
+        this.filmService = filmService;
     }
 
     public void setAddFilmView(AddFilmView addFilmView) {

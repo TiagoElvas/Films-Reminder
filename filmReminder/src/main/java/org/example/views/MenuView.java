@@ -2,14 +2,13 @@ package org.example.views;
 
 import org.academiadecodigo.bootcamp.Prompt;
 import org.academiadecodigo.bootcamp.scanners.menu.MenuInputScanner;
-import org.example.Bootstrap;
-import org.example.controllers.VideoClubController;
+import org.example.controller.filmController;
 
-public class VideoClubView {
+public class MenuView {
 
 
     private Prompt prompt;
-    private VideoClubController videoClubController;
+    private filmController filmController;
 
     String[] options = {"List films", "Add film", "Delete film", "Exit"};
 
@@ -18,15 +17,15 @@ public class VideoClubView {
         menuInputScanner.setMessage("Welcome to Codeflix");
         int choice = prompt.getUserInput(menuInputScanner);
         System.out.println(choice);
-        videoClubController.setChoice(choice);
+        filmController.setChoice(choice);
     }
 
     public void setPrompt(Prompt prompt) {
         this.prompt = prompt;
     }
 
-    public void setVideoClubController(VideoClubController videoClubController) {
-        this.videoClubController = videoClubController;
+    public void setVideoClubController(filmController filmController) {
+        this.filmController = filmController;
     }
 
 }
