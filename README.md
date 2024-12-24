@@ -21,8 +21,8 @@ A simple terminal-based film reminder application that allows you to list, add, 
 <h4 style="bold">1. Clone the repository</h4>
 
 Copy code
-(url)
-cd film-reminder-app
+<br> git@github.com:TiagoElvas/Films-Reminder.git
+<br> cd film-reminder-app
 
 <h4 style="bold">2. Configure Database Connection</h4>
 Ensure you have a relational database set up. You can configure your database connection in the persistence.xml file located in the src/main/resources/META-INF directory. 
